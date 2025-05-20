@@ -26,7 +26,7 @@ pub fn encode(source: &str) -> String {
 }
 
 pub fn decode(source: &str) -> String {
-    let mut iter = source.chars();
+    let mut iter = source.chars().peekable();
     let mut response = String::new();
     while let Some(c) = iter.next() {
         let res = u16::from_str_radix(&c.to_string(), 9);
