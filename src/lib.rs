@@ -34,7 +34,7 @@ pub fn decode(source: &str) -> String {
             Ok(mut n) => {
                 let mut _r = iter.next();
 
-                if _r.unwrap().is_numeric() {
+                if _r.unwrap().is_numeric() { // could be improved , at most two digits, could be extentded to more digits
                     n = [n.to_string(), _r.unwrap().to_string()]
                         .concat()
                         .parse()
